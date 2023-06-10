@@ -22,6 +22,11 @@ void main() {
   runApp(const MyApp());
 }
 
+@pragma('vm:entry-point')
+void secondaryDisplayMain() {
+  runApp(const MyApp());
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -279,7 +284,7 @@ class _SecondaryScreenState extends State<SecondaryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SecondaryDisplay(
-      callback: (argument) {
+      callback: (dynamic argument) {
         setState(() {
           value = argument;
         });

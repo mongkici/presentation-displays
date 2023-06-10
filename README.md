@@ -38,6 +38,13 @@ Widget build (BuildContext context) {
     );
 }
 ```
+- found issue with some plugin initialization. setup new entry point so we can decided what we need to call for initialization.
+```dart
+@pragma('vm:entry-point')
+void secondaryDisplayMain() {
+ /// do something that don't break plugin registration here.
+}
+```
 
 You can take a look at our example to learn more about how the plugin works
 
